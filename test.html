@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Lava Menu/title>
+<meta charset="utf-8" />
+<style type="text/css">
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+	margin: 0 auto;
+	padding: 2em 0;
+	width: 50%;
+	max-width: 600px;
+}
+
+#navigation {
+	height: 3em;
+	background: #f0f0f0;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	position: relative;
+}
+
+#navigation ul {
+	margin: 0.4em 0 0 0;
+	padding: 0;
+	list-style: none;
+	height: 2.6em;
+	font: 90% 'Open Sans', sans-serif;
+}
+
+#navigation li {
+	float: left;
+	width: 6em;
+	height: 100%;
+	display: block;
+	margin-right: 1em;
+}
+
+#navigation a {
+	float: left;
+	width: 100%;
+	height: 100%;
+	color: #333;
+	text-transform: uppercase;
+	text-align: center;
+	line-height: 2.6;
+	text-decoration: none;
+	display: block;
+}
+
+#navigation a:hover {
+	color: #d34545;
+}
+
+#lava {
+	width: 100%;
+	height: 0.2em;
+	background: #ccc;
+	position: relative;
+}
+
+#lava-cursor {
+	width: 5.4em;
+	height: 100%;
+	background: #d34545;
+	display: none;
+	position: relative;
+}
+	
+</style>
+</head>
+
+<body>
+
+<div id="navigation">
+	<div id="lava">
+		<div id="lava-cursor"></div>
+	</div>
+	<ul>
+		<li><a href="">Home</a></li>
+		<li class="current"><a href="">Archives</a></li>
+		<li><a href="">Contact</a></li>
+	</ul>
+</div>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.lava.js"></script>
+<script type="text/javascript">
+$(function() {
+
+	$('#navigation').lava();
+
+});
+</script>
+
+</body>
+</html>
