@@ -1,29 +1,3 @@
-/** jQuery Lava Menu
-  * A plugin for handling Lavalamp-like menus
-  * @author Gabriele Romanato <http://blog.gabrieleromanato.com>
-  * @requires jQuery 1.4+
-  *
-  * Usage: $(element).lava(options);
-  *		   container: Menu container element
-  *		   cursor: The HTML cursor element
-  *		   current: Current item class
-  *		   speed: Animation speed
-  *
-  * Sample HTML:
-  *
-  *   <div id="navigation">
-  *		<div id="lava">
-  *				<div id="lava-cursor"></div>
-  *		</div>
-  *		<ul>
-  *			<li><a href="">Home</a></li>
-  *			<li class="current"><a href="">Archives</a></li>
-  *			<li><a href="">Contact</a></li>
-  *		</ul>
-  *	  </div>
-  *
-  */
-
 (function($) {
 
 
@@ -55,6 +29,15 @@
 				
 					$(options.cursor).animate({
 						left: $li.position().left
+					}, options.speed);
+				
+				
+				});
+				
+				$li.mouseout(function() {
+				
+					$(options.cursor).animate({
+						left: $(options.current).position().left
 					}, options.speed);
 				
 				
