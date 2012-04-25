@@ -19,7 +19,15 @@
 		
 		return that.each(function() {
 		
+		  if($(options.current, $(options.container)).length) {
+		
 			$(options.cursor).css('left', $(options.container).find(options.current).position().left).fadeIn(options.speed);
+			
+	      } else {
+	      
+	      	$(options.cursor).fadeIn(options.speed);
+	      
+	      }
 			
 			$('li', $(options.container)).each(function() {
 			
@@ -36,9 +44,14 @@
 				
 				$li.mouseout(function() {
 				
-					$(options.cursor).stop(true, true).animate({
-						left: $(options.current).position().left
-					}, options.speed);
+					if($(options.current).length) {
+				
+						$(options.cursor).stop(true, true).animate({
+							left: $(options.current).position().left
+						}, options.speed);
+					
+					
+					}
 				
 				
 				});
