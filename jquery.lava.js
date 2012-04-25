@@ -7,7 +7,7 @@
 		
 		var settings = {
 		
-			container: 'ul',
+			container: '#navigation',
 			cursor: '#lava-cursor',
 			current: '.current',
 			speed: 800
@@ -27,7 +27,7 @@
 				
 				$li.mouseover(function() {
 				
-					$(options.cursor).animate({
+					$(options.cursor).stop(true, true).animate({
 						left: $li.position().left
 					}, options.speed);
 				
@@ -36,7 +36,7 @@
 				
 				$li.mouseout(function() {
 				
-					$(options.cursor).animate({
+					$(options.cursor).stop(true, true).animate({
 						left: $(options.current).position().left
 					}, options.speed);
 				
