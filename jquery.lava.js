@@ -44,10 +44,10 @@
 				
 				$li.mouseout(function() {
 				
-					if($(options.current).length) {
+					if($(options.current, $(options.container)).length) {
 				
 						$(options.cursor).stop(true, true).animate({
-							left: $(options.current).position().left
+							left: $(options.current, $(options.container)).position().left
 						}, options.speed);
 					
 					
